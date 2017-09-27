@@ -21,8 +21,34 @@ Or install it yourself as:
     $ gem install edools
 
 ## Usage
+####config
+```
+config = {
+  :access_token => 'token'
+}
+client = Edools::Client.new(config)
+```
+#####courses resource
+```
+#list
+client.courses
 
-TODO: Write usage instructions here
+#create
+params = {school_cource: {name: "course test}}
+client.create_course(params)
+
+#update
+id = 10
+params = {"school_cource": {"name": "course test"}}
+client.update_course(id, params)
+
+#show
+id = 10
+client.show_course(id)
+
+#destroy
+client.destroy_course(id)
+```
 
 ## Development
 
