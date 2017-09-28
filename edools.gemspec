@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Werter Meira"]
   spec.email         = ["wertermeira@hotmail.com"]
 
-  spec.summary       = ""
-  spec.description   = ""
-  spec.homepage      = ""
+  spec.summary       = "Manage api Edools"
+  spec.description   = "Site: https://www.edools.com/"
+  spec.homepage      = "https://github.com/wertermeira/edools"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
