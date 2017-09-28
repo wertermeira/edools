@@ -30,6 +30,7 @@ module Edools
       @connection.reset
     end
     #schools
+
       #show school
       def show_school(id)
         run(:get, "/schools/#{id}", [200])

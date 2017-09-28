@@ -27,7 +27,17 @@ config = {
 }
 client = Edools::Client.new(config)
 ```
+
+### school
+use token for create school wizard
+```
+params = {"school": {"name": "test name", "email": "test@gtest.com", "password": "1234567" }}
+client.create_school(params)
+```
+
+
 #### courses resource
+use generated token for school
 ```
 #list
 client.courses
@@ -48,12 +58,48 @@ client.show_course(id)
 #destroy
 client.destroy_course(id)
 ```
+#### school_products resource
+use generated token for school
+```
+#list
+client.products
 
-## Development
+#create
+params = {school_product: {"name": "product test, "school_id": 10}}
+client.create_product(params)
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+#### studantes resource
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+http://docs.edools.com/api/V1/InvitationsController.html<br />
+http://docs.edools.com/api/V1/UsersController.html<br />
+use generated token for school
+```
+#list
+client.studantes
+
+#create with invidation
+params = {invitation: {"first_name": "First", "last_name": "Last", "email": "first@gmail.com", "password": "12345678", "password_confirmation": "12345678"  }}
+client.create_and_invitation_studant(params)
+
+#create without invidation
+params = {studant: {"first_name": "First", "last_name": "Last", "email": "first@gmail.com", "password": "12345678", "password_confirmation": "12345678"  }}
+client.create_studant(params)
+
+#update
+id = 10
+params = {studant: {"first_name": "First", "last_name": "Last", "email": "first@gmail.com", "password": "12345678", "password_confirmation": "12345678"  }}
+
+client.update_studant(id, params)
+
+#show
+id = 10
+client.show_studant(id)
+
+#destroy
+client.destroy_studant(id)
+```
+
 
 ## Contributing
 
