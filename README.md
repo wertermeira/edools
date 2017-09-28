@@ -29,6 +29,7 @@ client = Edools::Client.new(config)
 ```
 
 ### school
+http://docs.edools.com/api/V1/SchoolsController.html <br />
 use token for create school wizard
 ```
 params = {"school": {"name": "test name", "email": "test@gtest.com", "password": "1234567" }}
@@ -37,6 +38,7 @@ client.create_school(params)
 
 
 #### courses resource
+http://docs.edools.com/api/V1/CoursesController.html <br />
 use generated token for school
 ```
 #list
@@ -59,6 +61,7 @@ client.show_course(id)
 client.destroy_course(id)
 ```
 #### school_products resource
+http://docs.edools.com/api/V1/SchoolProductsController.html not complet <br />
 use generated token for school
 ```
 #list
@@ -88,7 +91,7 @@ client.create_studant(params)
 
 #update
 id = 10
-params = {studant: {"first_name": "First", "last_name": "Last", "email": "first@gmail.com", "password": "12345678", "password_confirmation": "12345678"  }}
+params = {studant: {"first_name": "First", "last_name": "Last" }}
 
 client.update_studant(id, params)
 
@@ -103,7 +106,7 @@ client.destroy_studant(id)
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/edools. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/wertermeira/edools. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
